@@ -11,6 +11,10 @@ public class M_CotacaoJson {
 //    private String codMoeda;
     @JsonProperty("code")
     private String code;
+    @JsonProperty("codein")
+    private String codein;
+    @JsonProperty("name")
+    private String name;
 
 //    private Double maxima;
     @JsonProperty("high")
@@ -31,6 +35,10 @@ public class M_CotacaoJson {
 //    private Double cotacao;
     @JsonProperty("bid")
     private String bid;
+    @JsonProperty("ask")
+    private String ask;
+    @JsonProperty("timestamp")
+    private String timestamp;
 
 //    private LocalDateTime dataCotacao;
     @JsonProperty("create_date")
@@ -90,5 +98,37 @@ public class M_CotacaoJson {
 
     public void setCreate_date(String create_date) {
         this.create_date = create_date;
+    }
+
+    public String getCodein() {
+        return codein;
+    }
+
+    public void setCodein(String codein) {
+        this.codein = codein;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAsk() {
+        return ask;
+    }
+
+    public void setAsk(String ask) {
+        this.ask = ask;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 }
