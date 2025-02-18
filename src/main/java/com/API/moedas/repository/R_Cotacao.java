@@ -22,4 +22,11 @@ public interface R_Cotacao extends JpaRepository<M_Cotacao, Long> {
             "where cod_moeda = :codMoeda " +
             "order by data_criacao asc;", nativeQuery = true)
     List<M_Chart> findChartDataByMoeda(@Param("codMoeda") String codMoeda);
+
+    @Query(value = "select EXTRACT(EPOCH FROM (data_criacao AT TIME ZONE 'America/Sao_Paulo')) * 1000 as data, " +
+            "cotacao as valor " +
+            "from money.cotacao " +
+            "where cod_moeda = :codMoeda " +
+            "order by data_criacao desc limit 1;", nativeQuery = true)
+    M_Chart findNewestChartByMoeda(@Param("codMoeda") String moeda);
 }

@@ -56,8 +56,12 @@ public class S_Cotacao {
         return cotacao;
     }
 
-    public List<M_Chart> getChartMoeda(String codMoeda){
+    public List<M_Chart> getChartsMoeda(String codMoeda){
         return r_cotacao.findChartDataByMoeda(codMoeda);
+    }
+
+    public M_Chart getChartMoedaRecente(String moeda){
+        return r_cotacao.findNewestChartByMoeda(moeda);
     }
 
     public List<M_Cotacao> getCotacoesMoeda(String codMoeda){
