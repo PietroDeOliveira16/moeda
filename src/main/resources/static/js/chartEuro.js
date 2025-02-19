@@ -166,11 +166,8 @@ function generateNextValue(moeda){
 function addData(dataServer) {
 if (typeof series !== 'undefined') {
   var lastDataItem = series.dataItems[series.dataItems.length - 1];
-  console.log("Ultimo item da data: " + lastDataItem);
   var lastValue = lastDataItem.get("valueY");
-  console.log('Valor antigo: ' + lastValue);
   var lastDate = new Date(lastDataItem.get("valueX"));
-  console.log('Ultimo tempo: ' + lastDate);
   series.data.push(dataServer);
 
   var newDataItem = series.dataItems[series.dataItems.length - 1];
@@ -208,12 +205,8 @@ if (typeof series !== 'undefined') {
   }
 }
 
-generateChartData("chartDolar", "USD");
 generateChartData("chartEuro", "EUR");
-generateChartData("chartBtc", "BTC");
 
 setInterval(function () {
-  generateNextValue("USD");
   generateNextValue("EUR");
-  generateNextValue("BTC");
 }, 30000)
