@@ -3,6 +3,7 @@ package com.API.moedas.controller;
 import com.API.moedas.model.M_Chart;
 import com.API.moedas.service.S_Cotacao;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -27,5 +28,20 @@ public class C_Cotacao {
     @ResponseBody
     public M_Chart getNovaCotacaoMoeda(@RequestParam("moeda") String moeda){
         return s_cotacao.getChartMoedaRecente(moeda);
+    }
+
+    @GetMapping("/dolar")
+    public String getDolar(){
+        return "index";
+    }
+
+    @GetMapping("/euro")
+    public String getEuro(){
+        return "euro";
+    }
+
+    @GetMapping("/bitcoin")
+    public String getBitcoin(){
+        return "bitcoin";
     }
 }

@@ -7,3 +7,8 @@ body {
     height: 500px;
     max-width: 100%;
 }
+
+a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: black;
+}

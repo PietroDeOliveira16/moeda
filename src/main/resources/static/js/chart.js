@@ -205,8 +205,8 @@ if (typeof series !== 'undefined') {
   }
 }
 
-generateChartData("chartEuro", "EUR");
+generateChartData($('.chartDiv').attr('id'), $('#moeda').val());
 
 setInterval(function () {
-  generateNextValue("EUR");
+  generateNextValue($('#moeda').val());
 }, 30000)
